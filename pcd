@@ -1,0 +1,36 @@
+local v0=game:GetService("TweenService");local v1=game:GetService("UserInputService");local v2=game:GetService("StarterGui");local v3=game.Players.LocalPlayer;local v4=game:GetService("RunService");local v5=Instance.new("ScreenGui");v5.ResetOnSpawn=false;v5.Parent=v3:WaitForChild("PlayerGui");v5.IgnoreGuiInset=true;local v9=350;local v10=Instance.new("Frame",v5);v10.Size=UDim2.new(0,360,0,200);v10.Position=UDim2.new(0,20,1, -210);v10.BackgroundColor3=Color3.fromRGB(35,35,35);v10.BorderSizePixel=0;Instance.new("UICorner",v10).CornerRadius=UDim.new(0,12);
+
+local v2=game:GetService("StarterGui");
+local function v16(v294,v295,v296)
+v2:SetCore("SendNotification",{Title=v294 or "Powiadomienie",Text=v295 or "",Duration=v296 or 3,Button1="OK"});
+end
+
+local v17=false;local v18;local v19;
+v10.InputBegan:Connect(function(v297)
+if (v297.UserInputType==Enum.UserInputType.MouseButton1) then
+v17=true;v18=v297.Position;v19=v10.Position;
+end end);
+
+v1.InputEnded:Connect(function(v298)
+if (v298.UserInputType==Enum.UserInputType.MouseButton1) then
+v17=false;
+end end);
+
+v1.InputChanged:Connect(function(v299)
+if (v17 and (v299.UserInputType==Enum.UserInputType.MouseMovement)) then
+local v329=v299.Position-v18;
+v10.Position=v19+UDim2.fromOffset(v329.X,v329.Y);
+end end);
+
+-- 🔥 PREMIUM LISTA (TU DODANE TWOJE ID)
+local v190={8313583837,3244481671,10474735500};
+
+local function v191(v300)
+for v324,v325 in ipairs(v190) do
+if (v325==v300) then return true;end
+end
+return false;
+end
+
+local v192=v191(v3.UserId);
+local v193=350;
